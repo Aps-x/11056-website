@@ -4,9 +4,12 @@ Abstract
 :root {
     --clr-green:  hsl(116, 17%, 66%);
     --clr-orange: hsl(15, 71%, 43%);
-    --clr-cream:  hsl(40, 7%, 84%);
+    --clr-red:    hsl(356, 64%, 60%);
+    --clr-paper:  hsl(40, 7%, 84%);
+    --clr-cream:  hsl(33, 61%, 86%);
     --clr-white:  hsl(0, 0%, 100%);
     --clr-black:  hsl(260, 7%, 8%);
+    --clr-gray:   hsl(50, 6%, 20%);;
 
     --ff-regular: "Roboto", sans-serif;
     --ff-special: "Special Elite", serif;
@@ -90,12 +93,10 @@ Components
     }
     &--first {
         @extend #{$homepage-card};
-        order: -1;
-        @media (max-width: 813px) {
-            order: unset;
+        @media (min-width: 831px) {
+            order: -1;
         }
     }
-
     &__article {
         $article: &;
         display: grid;
@@ -146,6 +147,25 @@ Components
     margin-top: calc(1ex - 1cap);
 }
 
+.card3d {
+    --transition-speed: 300ms;
+    position: relative;
+    transform: scale(1);
+    transition: all var(--transition-speed) ease-out;
+    z-index: 0;
+    &:hover {
+        z-index: 2;
+        transform: scale(1.3);
+    }
+    &:not(:hover) {
+        animation: z-index-hack var(--transition-speed);
+    }
+}
+@keyframes z-index-hack {
+    0%, 100% {
+        z-index: 1;
+    }
+}
 /* ==========================================================================
 Page & Layout
 ========================================================================== */
@@ -161,9 +181,50 @@ Page & Layout
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-width)), 1fr));
         grid-gap: 2rem;
-        width: min(100% - var(--gutter) * 2, var(--max-width));
+        width: min(var(--max-width), 100% - (var(--gutter) * 2));
         margin-inline: auto;
         margin-block: 5rem;
+    }
+}
+
+.about {
+    --gutter: 1rem;
+    --max-width: 70ch;
+    width: min(var(--max-width), 100% - (var(--gutter) * 2));
+    margin-inline: auto;
+    padding-block: 3rem;
+    &__title {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-large);
+        line-height: 1.1;
+        text-wrap: balance;
+        color: var(--clr-gray);
+    }
+    & > * + * {
+        margin-top: 1rem;
+    }
+    &__heading {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-medium);
+        line-height: 1.1;
+        text-wrap: balance;
+        color: var(--clr-gray);
+        margin-top: 1.75rem;
+    }
+}
+
+.graphic-design {
+    --gutter: 1rem;
+    --max-width: 80ch;
+    --gap: 0.75rem;
+    width: min(var(--max-width), 100% - (var(--gutter) * 2));
+    margin-inline: auto;
+    padding-block: 3rem;
+    columns: 250px;    
+    gap: var(--gap);    
+    & > * {
+        // break-inside: avoid; // Include this if text is added
+        margin-bottom: var(--gap);
     }
 }
 
@@ -182,6 +243,9 @@ Utility
 }
 .vertical-center {
     margin-block: auto;
+}
+.txt-clr-red {
+    color: var(--clr-red);
 }
 .special-font {
     font-family: var(--ff-special);
