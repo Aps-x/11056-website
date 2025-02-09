@@ -149,13 +149,11 @@ Components
 
 .card3d {
     --transition-speed: 300ms;
-    position: relative;
-    transform: scale(1);
     transition: all var(--transition-speed) ease-out;
+    position: relative;
     z-index: 0;
     &:hover {
         z-index: 2;
-        transform: scale(1.3);
     }
     &:not(:hover) {
         animation: z-index-hack var(--transition-speed);

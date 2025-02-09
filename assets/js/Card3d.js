@@ -1,37 +1,39 @@
-// Source (with minor tweaks): https://codepen.io/nelsonr/pen/WNQaZPb
+// This code is a slightly modified version of this: https://codepen.io/nelsonr/pen/WNQaZPb
 
 function map(val, minA, maxA, minB, maxB) {
     return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);
 }
 
-function Card3D(img, ev) {
-    let imgRect = img.getBoundingClientRect();
+function apply_3D_Card_Effect(card, ev) {
+    let imgRect = card.getBoundingClientRect();
+
     let width = imgRect.width;
     let height = imgRect.height;
+
     let mouseX = ev.offsetX;
     let mouseY = ev.offsetY;
+
     let rotateY = map(mouseX, 0, width, -30, 30);
     let rotateX = map(mouseY, 0, height, 30, -30);
+
     let brightness = map(mouseY, 0, height, 1.3, 0.7);
 
-    img.style.transform = `scale(1.3) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    img.style.filter = `brightness(${brightness})`;
+    card.style.transform = `scale(1.3) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    card.style.filter = `brightness(${brightness})`;
 }
 
-var cards = document.querySelectorAll('.card3d');
+const cards = document.querySelectorAll('.card3d');
 
-cards.forEach((img) => {
+cards.forEach((card) => {
 
-    img.addEventListener('mousemove', (ev) => {
-        Card3D(img, ev);
+    // User hovers over a card
+    card.addEventListener('mousemove', (ev) => {
+        apply_3D_Card_Effect(card, ev);
     });
 
-    img.addEventListener('mouseleave', () => {
-        img.style.transform = 'scale(1)';
-        img.style.filter = 'brightness(1)';
-    });
-
-    img.addEventListener('mouseenter', () => {
-        img.style.transform = 'scale(1.3)';
+    // User stops hovering over a card
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+        card.style.filter = 'brightness(1)';
     });
 });
