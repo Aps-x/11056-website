@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>11056 Website Furniture</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js" defer></script>
 </head>
 <body>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <main>
+        <h1>Furniture Designed by Gordon Andrews</h1>
+        <section class="model-showcase">
+            <model-viewer src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>
 
-    <model-viewer src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-    </model-viewer>
-    
+            <model-viewer src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>    
+        </section>
+    </main>
 </body>
 </html>
