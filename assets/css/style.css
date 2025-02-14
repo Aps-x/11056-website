@@ -21,7 +21,7 @@ Abstract
 }
 
 /* ==========================================================================
-HTML Elements
+Base
 ========================================================================== */
 *,
 *::before,
@@ -52,6 +52,14 @@ img, picture, video, canvas, svg {
   max-width: 100%;
   height: auto;
   font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p, h1, h2, h3 {
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 
 a {
@@ -63,9 +71,6 @@ a:hover {
   color: var(--clr-orange);
 }
 
-/* ==========================================================================
-Base
-========================================================================== */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -120,6 +125,13 @@ Components
   margin-inline: auto;
 }
 
+.header-card {
+  border-radius: 1rem;
+  width: min(100%, 375px);
+  height: -moz-max-content;
+  height: max-content;
+}
+
 .horizontal-rule {
   border-top: 5px solid var(--clr-black);
 }
@@ -162,7 +174,7 @@ Components
 }
 .model-showcase {
   display: flex;
-  height: min(90vh, 750px);
+  height: 90vh;
 }
 .model-showcase > * {
   flex: 1;
@@ -170,13 +182,11 @@ Components
 }
 
 /* ==========================================================================
-Page & Layout
+Pages
 ========================================================================== */
 .home {
   display: flex;
   background-image: url("../images/background.jpg");
-  background-size: cover;
-  background-attachment: fixed;
 }
 .home__content {
   --card-width: 375px;
@@ -190,12 +200,15 @@ Page & Layout
   margin-block: 5rem;
 }
 
-.about {
+.about__content {
   --gutter: 1rem;
   --max-width: 70ch;
   width: min(var(--max-width), 100% - var(--gutter) * 2);
   margin-inline: auto;
   padding-block: 3rem;
+}
+.about__article > * {
+  margin-top: 1.25rem;
 }
 .about__title {
   font-weight: var(--fw-bold);
@@ -204,12 +217,10 @@ Page & Layout
   text-wrap: balance;
   color: var(--clr-gray);
 }
-.about > * + * {
-  margin-top: 1rem;
-}
 .about__heading {
   font-weight: var(--fw-bold);
   font-size: var(--fs-medium);
+  font-family: var(--ff-special);
   line-height: 1.1;
   text-wrap: balance;
   color: var(--clr-gray);
@@ -231,11 +242,22 @@ Page & Layout
   margin-bottom: var(--gap);
 }
 
+/* ==========================================================================
+Layout
+========================================================================== */
 .even-columns {
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
+}
+
+.grid-auto-fit {
+  --min: 250px;
+  --gap: 1rem;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
 /* ==========================================================================
