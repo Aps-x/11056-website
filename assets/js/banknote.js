@@ -1,3 +1,5 @@
-document.getElementById('banknote').addEventListener('click', function() {
-    this.classList.toggle('flipped');
+document.querySelectorAll('.banknote').forEach(banknote => {
+    banknote.addEventListener('click', function() {
+        this.classList.toggle('flipped');
+    });
 });

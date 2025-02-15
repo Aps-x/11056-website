@@ -14,6 +14,7 @@ Abstract
   --ff-special: "Special Elite", serif;
   --fw-regular: 400;
   --fw-bold: 600;
+  --fs-small: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   --fs-regular: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   --fs-medium: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
   --fs-semilarge: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
@@ -51,6 +52,7 @@ img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
   height: auto;
+  max-height: 100%;
   font-style: italic;
   background-repeat: no-repeat;
   background-size: cover;
@@ -125,11 +127,28 @@ Components
   margin-inline: auto;
 }
 
-.header-card {
+.header {
+  --gutter: 1rem;
+  --max-width: 70ch;
+  width: min(var(--max-width), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+  padding-block: 2rem;
+  justify-items: center;
+}
+.header__card {
   border-radius: 1rem;
+  border: 2px solid var(--clr-gray);
+  padding: 1rem;
   width: min(100%, 375px);
-  height: -moz-max-content;
-  height: max-content;
+  height: 198px;
+}
+.header__title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-semilarge);
+  line-height: 1.1;
+  text-wrap: balance;
+  color: var(--clr-gray);
+  margin-block: auto;
 }
 
 .horizontal-rule {
@@ -164,10 +183,10 @@ Components
   z-index: 2;
 }
 .card3d:not(:hover) {
-  animation: z-index-hack var(--transition-speed);
+  animation: z-index-transition var(--transition-speed);
 }
 
-@keyframes z-index-hack {
+@keyframes z-index-transition {
   0%, 100% {
     z-index: 1;
   }
@@ -186,17 +205,13 @@ Components
 }
 
 .banknote {
-  width: 400px;
-  height: 200px;
-  position: relative;
+  width: 100%;
+  aspect-ratio: 2/1;
   transform-style: preserve-3d;
   transition: transform 0.8s;
   cursor: pointer;
 }
 .banknote__image, .banknote__image--back, .banknote__image--front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
   background-position: center;
@@ -204,6 +219,14 @@ Components
 }
 .banknote__image--back {
   transform: rotateY(180deg);
+}
+.banknote__title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-medium);
+  font-family: var(--ff-special);
+}
+.banknote__text {
+  font-size: var(--fs-small);
 }
 
 .front {
@@ -237,12 +260,12 @@ Pages
   margin-block: 5rem;
 }
 
-.about__content {
+.about__content-column {
   --gutter: 1rem;
   --max-width: 70ch;
   width: min(var(--max-width), 100% - var(--gutter) * 2);
   margin-inline: auto;
-  padding-block: 3rem;
+  padding-bottom: 3rem;
 }
 .about__article > * {
   margin-top: 1.25rem;
@@ -266,7 +289,7 @@ Pages
 
 .graphic-design {
   --gutter: 1rem;
-  --max-width: 80ch;
+  --max-width: 90ch;
   --gap: 0.75rem;
   width: min(var(--max-width), 100% - var(--gutter) * 2);
   margin-inline: auto;
@@ -277,6 +300,30 @@ Pages
 }
 .graphic-design > * {
   margin-bottom: var(--gap);
+}
+
+.banknotes {
+  --gutter: 1rem;
+  --max-width: 80ch;
+  width: min(var(--max-width), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+  padding-bottom: 5rem;
+}
+.banknotes > *:where(:not(:first-child)) {
+  margin-top: 3rem;
+}
+.banknotes__grid {
+  --min: 400px;
+  --gap: 1rem;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .banknotes__grid > .order-first {
+    order: unset;
+  }
 }
 
 /* ==========================================================================
@@ -295,6 +342,14 @@ Layout
   display: grid;
   grid-gap: var(--gap);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+.stack-layout {
+  display: grid;
+  grid-template-areas: "stack";
+}
+.stack-layout > * {
+  grid-area: stack;
 }
 
 /* ==========================================================================

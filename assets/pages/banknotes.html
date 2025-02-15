@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Adam Seaton">
+    <meta name="description" content="A website produced for Front-End Web Design 11056 that is inspired by the works of Gordon Andrews.">
 
     <title>11056 Website Banknotes</title>
 
@@ -13,25 +15,154 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet">
     <script src="../js/banknote.js" defer></script>
 </head>
-<body class="banknotes">
+<body>
 
     <div class="texture"></div>
 
-    <header>
+    <header class="header | about__content-column grid-auto-fit">
+        <div class="header__card | even-columns">
+            <img src="../images/arrow_down_black.gif" alt="">
+            <h1 class="header__title">Bank Notes</h1>
+        </div>
 
+        <nav class="header__card | order-first">
+            <a class="even-columns" href="../../index.html">
+                <img src="../images/arrow_circled_left.gif" alt="">
+                <h2 class="header__title">Back</h2>
+            </a>
+        </nav>
     </header>
 
-    <main>
-        <article>
+    <main class="banknotes">
+        <article class="banknotes__grid">
             <div class="banknote-container">
-                <div class="banknote | " id="banknote">
+                <div class="banknote | stack-layout " id="banknote">
                     <img class="banknote__image--front" src="../images/Australian_$1_-_original_series_-_obverse.jpg" alt="">
                     <img class="banknote__image--back" src="../images/Australian_$1_-_original_series_-_reverse.jpg" alt="">
                 </div>
             </div>
-            <p>
+            <div>
+                <h2 class="banknote__title">$1 Banknote</h2>
+                <p class="banknote__text">
+                    The note features Queen Elizabeth II wearing Garter robes on the obverse with the 
+                    Australian coat of arms. This portrait was based on a photo taken by Douglas Glass.
 
-            </p>
+                    The reverse of the note features Aboriginal contemporary art, created by David 
+                    Malangi. The artwork depicts the "mortuary feast" of one of the artist's creation 
+                    ancestors, Gunmirringu, the great ancestral hunter. 
+                </p>
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/Australian_$2_-_original_series_-_obverse.jpg" alt="">
+                    <img class="banknote__image--back" src="../images/Australian_$2_-_original_series_-_reverse.jpg" alt="">
+                </div>
+            </div>
+            <div class="order-first">
+                <h2 class="banknote__title">$2 Banknote</h2>
+                <p class="banknote__text">
+                    The two dollar note was replaced by a gold-coloured coin on 14 June 1988, 
+                    due to the longer service life and cost effectiveness of coins. These notes can 
+                    still be redeemed at face value by the Reserve Bank of Australia and most commercial 
+                    banks, but numismatics and note collectors may pay a higher price for these notes 
+                    depending on age and condition.                 
+                </p>
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/Australian_$5_-_original_series_-_obverse.jpg" alt="">
+                    <img class="banknote__image--back" src="../images/Australian_$5_-_original_series_-_reverse.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <h2 class="banknote__title">$5 Banknote</h2>
+                <p class="banknote__text">
+                    The $5 banknote features portraits of Sir Joseph 
+                    Banks and Caroline Chisholm, as well as elevations of Sydney streets from Joseph 
+                    Fowles' "Sydney in 1848", the cover of the Shipping Gazette, a watercolour of the 
+                    Waverley, and a handbill of a meeting of the Family Colonization Loan Society. All 
+                    of these images were sourced from the State Library of New South Wales.                </p>
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/Australian_$10_-_original_series_-_obverse.png" alt="">
+                    <img class="banknote__image--back" src="../images/Australian_$10_-_original_series_-_reverse.jpg" alt="">
+                </div>
+            </div>
+            <div class="order-first">
+                <h2 class="banknote__title">$10 Banknote</h2>
+                <p class="banknote__text">
+                    The people depicted on the paper note issue are architect Francis Greenway, 
+                    previously a convicted forger, on the obverse along with public buildings he 
+                    helped construct, and Henry Lawson on the reverse with his poetry and scenes of 
+                    the outback gold-mining town of Gulgong in the 19th century, including the Times 
+                    Bakery.
+                </p>         
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/Australian_$20_-_original_series_-_obverse.jpg" alt="">
+                    <img class="banknote__image--back" src="../images/Australian_$20_-_original_series_-_reverse.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <h2 class="banknote__title">$20 Banknote</h2>
+                <p class="banknote__text">
+                    The people depicted on the paper note issue were Sir Charles Kingsford Smith on the 
+                    obverse along with five Lissajous curves drawn by a two-pendulum harmonograph, and 
+                    Lawrence Hargrave on the reverse with his drawings of kites and aircraft designs.
+                </p>         
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/Australian_$50_note_paper_front.jpg" alt="">
+                    <img class="banknote__image--back" src="../images/Australian_$50_note_paper_back.jpg" alt="">
+                </div>
+            </div>
+            <div class="order-first">
+                <h2 class="banknote__title">$50 Banknote</h2>
+                <p class="banknote__text">
+                    The original paper fifty-dollar note released on Tuesday 9 October 1973, designed by 
+                    Gordon Andrews, has a scientific theme. On the front of the note is a portrait of 
+                    Australian pathologist Howard Walter Florey, Baron Florey and scenes of laboratory 
+                    research. On the back is a portrait of Sir Ian Clunies Ross, veterinary scientist 
+                    and first chairman of the CSIRO, along with scenes from the Australian environment.
+                </p>         
+            </div>
+        </article>
+
+        <article class="banknotes__grid">
+            <div class="banknote-container">
+                <div class="banknote | stack-layout" id="banknote">
+                    <img class="banknote__image--front" src="../images/100_dollar_note_front.jpg" alt="">
+                    <img class="banknote__image--back" src="../images/Discovery_100_dollar_note_back_bigJohn_Tebbutt.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <h2 class="banknote__title">$100 Banknote</h2>
+                <p class="banknote__text">
+                    The paper issue was released on Monday 31 March 1984, has a portrait of Antarctic 
+                    explorer Sir Douglas Mawson, with a background of a mountain range with a geological
+                    strata format. A large diamond shape appears to the left of the main picture. 
+                    Astronomer John Tebbutt is on the reverse, with a background of the observatory he 
+                    built and a local church.
+                </p>         
+            </div>
         </article>
     </main>
 </body>

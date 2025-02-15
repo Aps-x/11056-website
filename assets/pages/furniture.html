@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Adam Seaton">
+    <meta name="description" content="A website produced for Front-End Web Design 11056 that is inspired by the works of Gordon Andrews.">
 
     <title>11056 Website Furniture</title>
 
@@ -16,8 +18,22 @@
 </head>
 <body>
     <div class="texture"></div>
+
+    <header class="header | about__content-column grid-auto-fit">
+        <div class="header__card | even-columns">
+            <img src="../images/arrow_down_black.gif" alt="">
+            <h1 class="header__title">Furniture</h1>
+        </div>
+
+        <nav class="header__card | order-first">
+            <a class="even-columns" href="../../index.html">
+                <img src="../images/arrow_circled_left.gif" alt="">
+                <h2 class="header__title">Back</h2>
+            </a>
+        </nav>
+    </header>
+
     <main>
-        <h1>Furniture Designed by Gordon Andrews</h1>
         <section class="model-showcase">
             <model-viewer src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>
 
