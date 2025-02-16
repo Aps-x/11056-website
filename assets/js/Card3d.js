@@ -1,4 +1,4 @@
-// This code is a slightly modified version of this: https://codepen.io/nelsonr/pen/WNQaZPb
+// This code is a modified version of this code by Nelson Rodrigues: https://codepen.io/nelsonr/pen/WNQaZPb
 
 function map(val, minA, maxA, minB, maxB) {
     return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);
