@@ -192,11 +192,24 @@ Components
     }
 }
 .model-showcase {
+    --min: 400px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10rem;
     height: 90vh;
     & > * {
-        flex: 1;
+        flex: 1 1 var(--min);
         height: 100%;
+        max-width: 80vw;
+        margin-inline: auto;
+    }
+}
+.model {
+    &__title {
+        font-family: var(--ff-special);
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-medium);
+        text-align: center;
     }
 }
 .banknote-container {
@@ -238,6 +251,7 @@ Components
     text-align: center;
     font-family: var(--ff-special);
     font-weight: var(--fw-bold);
+    padding-block: 3rem;
 }
 /* ==========================================================================
 Pages
@@ -303,7 +317,7 @@ Pages
     --max-width: 80ch;
     width: min(var(--max-width), 100% - (var(--gutter) * 2));
     margin-inline: auto;
-    padding-block: 5rem;
+    padding-block: 3rem;
     & > *:where(:not(:first-child)) {
         margin-top: 7.5rem;
     }

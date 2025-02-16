@@ -35,14 +35,20 @@
 
     <main>
         <section class="model-showcase">
-            <model-viewer src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>
-
-            <model-viewer src="../models/Gazelle.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>    
+            <model-viewer class="model" src="../models/Rondo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.75" auto-rotate>
+                <h2 class="model__title">Rondo</h2>
+            </model-viewer>
         
-            <model-viewer src="../models/Spider.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"></model-viewer>    
+            <model-viewer class="model" src="../models/Gazelle.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.75" auto-rotate>
+                <h2 class="model__title">Gazelle</h2>
+            </model-viewer>    
+        
+            <model-viewer class="model" src="../models/Spider.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.75" auto-rotate>
+                <h2 class="model__title">Spider</h2>
+            </model-viewer>    
         </section>
     </main>
-    
+
     <footer class="note">
         This website was produced by students in the Faculty of Arts & Design, University of Canberra, 2025
     </footer>
