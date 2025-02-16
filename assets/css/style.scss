@@ -4,12 +4,13 @@ Abstract
 :root {
     --clr-green:  hsl(116, 17%, 66%);
     --clr-orange: hsl(15, 71%, 43%);
-    --clr-red:    hsl(356, 64%, 60%);
+    --clr-red:    hsl(356, 64%, 54%);
     --clr-paper:  hsl(40, 7%, 84%);
     --clr-cream:  hsl(33, 61%, 86%);
     --clr-white:  hsl(0, 0%, 100%);
     --clr-black:  hsl(260, 7%, 8%);
-    --clr-gray:   hsl(50, 6%, 20%);;
+    --clr-slate:  hsl(255, 7%, 36%);
+    --clr-gray:   hsl(50, 6%, 20%);
 
     --ff-regular: "Roboto", sans-serif;
     --ff-special: "Special Elite", serif;
@@ -68,7 +69,7 @@ a {
     color: unset;
 }
 a:hover {
-    color: var(--clr-orange);
+    color: var(--clr-orange); 
 }
 .visually-hidden {
     position: absolute;
@@ -139,10 +140,11 @@ Components
     justify-items: center;
     &__card {
         border-radius: 1rem;
-        border: 2px solid var(--clr-gray);
+        border: 2px solid var(--clr-slate);
         padding: 1rem;
         width: min(100%, 375px);
         height: 198px;
+        align-content: center;
     }
     &__title {
         font-weight: var(--fw-bold);
@@ -229,14 +231,13 @@ Components
         font-size: var(--fs-small);
     }
 }
-.front {
-    background: url('front.jpg') center/cover;
-}
-.back {
-    background: url('back.jpg') center/cover;
-}
 .flipped {
     transform: rotateY(180deg);
+}
+.note {
+    text-align: center;
+    font-family: var(--ff-special);
+    font-weight: var(--fw-bold);
 }
 /* ==========================================================================
 Pages
@@ -294,7 +295,6 @@ Pages
     columns: 250px;    
     gap: var(--gap);    
     & > * {
-        // break-inside: avoid; // Include this if text is added
         margin-bottom: var(--gap);
     }
 }
@@ -303,9 +303,9 @@ Pages
     --max-width: 80ch;
     width: min(var(--max-width), 100% - (var(--gutter) * 2));
     margin-inline: auto;
-    padding-bottom: 5rem;
+    padding-block: 5rem;
     & > *:where(:not(:first-child)) {
-        margin-top: 3rem;
+        margin-top: 7.5rem;
     }
     &__grid {
         --min: 400px;
