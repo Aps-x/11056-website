@@ -294,6 +294,7 @@ Pages
 .home {
     display: flex;
     background-image: url("../images/background.jpg");
+    background-attachment: fixed;
 }
 
 .home__content {
