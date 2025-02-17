@@ -3,14 +3,14 @@
 
 ## **Introduction:**
 
-My website for 11056 is a showcase of Gordon Andrews’ work. The target audience is anyone who is interested in learning more about Gordon Andrews, and I will also assume they have some background or interest in graphic design.
+My website for 11056 acts as a digital showcase of Gordon Andrews’ work, highlighting his contributions to graphic design, furniture, and currency design. The target audience is anyone who is interested in learning more about Gordon Andrews and Australian design history. I will also assume they have some background or interest in graphic design and will appreciate the style of the website.
 
 ## **Design Style:**
 
-This website follows a vintage minimalist design style to pay homage to Andrews’ style. In particular, the home page was inspired by the signage presentation board Andrews’ designed for the RBA:  
+Gordon Andrew's visual style varied across the multiple disciplines he worked in, but generally falls under the umbrella of mid-century modern. My website pays homage to Andrew's style; in particular, the layout and visual hierarchy of the homepage are inspired by the signage presentation board Andrews’ designed for the RBA (below).
 ![Image](https://github.com/user-attachments/assets/5a752c1f-6da0-41d7-9154-cb5ea9b5f5bd)
 
-Additionally, the navigation on each page was inspired by the dyeline for RBA note printing works:  
+Additionally, the navigation on each page was inspired by the dyeline for RBA note printing works (below). I personally find the concept of representing the website navigation like actual wayfinding signage very interesting. Whilst the homepage of my website has bold colors and playful shapes, which follows the mid-century modern aesthetic closely, I instead went with a more muted color palette and simpler forms for the four other pages on the site which is closer to a vintage minimalist style. I wanted to go for a vintage minimalist style because it has a very nostalgic feeling.
 ![Image](https://github.com/user-attachments/assets/de8fc597-2a62-4ea7-895d-81ffbc1a360a)
 
 ## **Typography:**
