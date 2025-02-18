@@ -145,6 +145,7 @@ Components
         width: min(100%, 375px);
         height: 198px;
         align-content: center;
+        grid-auto-rows: 100%;
     }
     &__title {
         font-weight: var(--fw-bold);
